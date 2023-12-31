@@ -21,7 +21,7 @@ Get your FastAPI Blog Website up and running with these simple steps:
 Begin by cloning this repository to your local machine. You can do this by executing the following command:
 
 ```shell
-git clone <repository_url>
+git clone https://github.com/EuanHoll/FastAPI-Blog-Website.git fastapi_blog_website
 ```
 
 ### 2. Navigate to the Project Folder
@@ -29,7 +29,7 @@ git clone <repository_url>
 Move to the project's root folder using your terminal or command prompt:
 
 ```shell
-cd <project_folder>
+cd fastapi_blog_website
 ```
 
 ### 3. Install Dependencies
