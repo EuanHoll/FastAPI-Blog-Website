@@ -12,6 +12,9 @@ Experience the power of FastAPI and enjoy these remarkable features:
 - **All-In-One Solution**: With the exception of a Gmail and reCAPTCHA account, everything you need is contained within this project.
 - **Admin Panel**: Easily manage your blog posts, contact requests, and admin users with the integrated Markdown editor.
 
+## Example Site
+An example of sites that can be created with this can be found at [euanh.com](https://euanh.com)
+
 ## Installation
 
 Get your FastAPI Blog Website up and running with these simple steps:
