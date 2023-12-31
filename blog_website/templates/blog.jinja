@@ -1,0 +1,44 @@
+{# blog.html #}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ config.site_name }} : {{ post.title }}</title>
+    <!-- Include Tailwind CSS -->
+    <link href="{{ url_for('static', path='/css/tailwind.css') }}" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', path='/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', path='/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', path='/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ url_for('static', path='/site.webmanifest') }}">
+</head>
+
+<body class="flex flex-col h-screen">
+    <!-- Header -->
+    {% include 'header.jinja' %}
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6">
+        <div class="text-center py-20">
+            <div class="w-full lg:w-2/3 mx-auto rounded-xl shadow-md bg-white p-6 border-2">
+                <h1 class="text-header_green_hover text-4xl font-riffic mb-4">{{ post.title }}</h1>
+                <div class="text-center">
+                    <div class="text-sm py-2">
+                        <p class="mt-2 text-gray-600">Last updated: {{ post.updated_on }}</p>
+                    </div>
+
+                    <div class="prose center-prose">
+                        {{ post.content | safe }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    {% include 'footer.jinja' %}
+</body>
+
+</html>
