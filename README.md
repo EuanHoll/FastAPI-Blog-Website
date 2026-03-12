@@ -37,12 +37,12 @@ cd fastapi_blog_website
 
 ### 3. Install Dependencies
 
-We recommend using Poetry for dependency management. If you don't have Poetry installed, please follow the [official Poetry installation guide](https://python-poetry.org/docs/) to set it up on your system.
+We recommend using [uv](https://docs.astral.sh/uv/) for dependency management.
 
-Once you have Poetry ready, install the project dependencies with a single command:
+Once you have `uv` installed, install the project dependencies with a single command:
 
 ```shell
-poetry install
+uv sync
 ```
 
 Alternatively, you can choose to install dependencies using the `requirements.txt` file. However, please note that this approach may not always keep your dependencies up to date.
