@@ -158,4 +158,4 @@ Enjoy managing your FastAPI Blog Website effortlessly and securely!
 
 This project is licensed under the [MIT License with Attribution](LICENSE).
 
-Copyright (c) [2023] [EuanHoll]
+Copyright (c) 2023 EuanHoll.
