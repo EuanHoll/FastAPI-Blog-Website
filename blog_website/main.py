@@ -57,6 +57,7 @@ with defaults.Session() as session:
 @app.get(defaults.site_mapping["home"])
 async def home(request: Request):
     return templates.TemplateResponse(
+        request,
         "index.jinja",
         {
             "request": request,
@@ -70,6 +71,7 @@ async def home(request: Request):
 @app.get(defaults.site_mapping["about"])
 async def about(request: Request):
     return templates.TemplateResponse(
+        request,
         "about.jinja",
         {
             "request": request,
@@ -82,6 +84,7 @@ async def about(request: Request):
 @app.get(defaults.site_mapping["contact"])
 async def contact(request: Request):
     return templates.TemplateResponse(
+        request,
         "contact.jinja",
         {
             "request": request,
@@ -111,6 +114,7 @@ async def contact_form_submission(
     # Check if reCAPTCHA test passed
     if not result.get("success") or result.get("score") < defaults.is_a_bot_threshold:
         return templates.TemplateResponse(
+            request,
             "contact_success.jinja",
             {
                 "request": request,
@@ -139,6 +143,7 @@ async def contact_form_submission(
         )
     except Exception as e:
         return templates.TemplateResponse(
+            request,
             "contact_success.jinja",
             {
                 "request": request,
@@ -149,6 +154,7 @@ async def contact_form_submission(
 
     # Return a success message
     return templates.TemplateResponse(
+        request,
         "contact_success.jinja",
         {
             "request": request,
@@ -161,6 +167,7 @@ async def contact_form_submission(
 @app.get(defaults.site_mapping["blog_posts"])
 async def blog(request: Request):
     return templates.TemplateResponse(
+        request,
         "blog_posts.jinja",
         {
             "request": request,
@@ -177,6 +184,7 @@ async def view_blog_post(request: Request, id: int):
 
     if post is None:
         return templates.TemplateResponse(
+            request,
             "404.jinja",
             {
                 "request": request,
@@ -189,6 +197,7 @@ async def view_blog_post(request: Request, id: int):
         )
 
     return templates.TemplateResponse(
+        request,
         "blog.jinja",
         {
             "request": request,
@@ -202,6 +211,7 @@ async def view_blog_post(request: Request, id: int):
 @app.exception_handler(404)
 async def not_found(request, exc):
     return templates.TemplateResponse(
+        request,
         "404.jinja",
         {
             "request": request,
